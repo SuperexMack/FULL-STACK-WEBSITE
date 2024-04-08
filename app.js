@@ -81,17 +81,10 @@ passport.use(new LocalStrategy(User.authenticate()))
 passport.serializeUser(User.serializeUser()) // serializeUser() iska kaam hota hai user ka sara data ka record rakhna when he login 
 passport.deserializeUser(User.deserializeUser()) //deserializeUser() iska kaam hota hai user ka sara data ka record hta dena  when  he login-out
 
-
-
-
-
 .
 
-
 app.get("/" , (req,res)=>{
-
 res.send("your server had been set up");
-
 
 })
 
@@ -107,7 +100,6 @@ next()
 
 })
 
-
 // app.get("/demouser" , async(req,res)=>{
 
 // let fakeUser = new User({ // here user is the the database jiske aandar user ki info store hogi
@@ -122,14 +114,6 @@ next()
 
 
 // })
-
-
-
-
-
-
-
-
 
 app.get("/listings" , wrapAsync(async (req,res)=>{
 
@@ -253,12 +237,6 @@ res.redirect("/listings")
 )
 
 
-
-
-
-
-
-
 // app.get("/testListing" , async (req,res)=>{
 
 // let samplelisting = new List({
@@ -291,11 +269,6 @@ next(new ExpressError(404 , "Page Not Found"))
 })
 
 
-
-
-
-
-
 // now we are going to set a error handling middleware which will help to handle backend errors
 
 app.use((err,req,res,next)=>{
@@ -312,40 +285,11 @@ res.status(statusCode).render("error.ejs" , {message})
 })
 
 
-
-
-
-
-
-
-
 app.listen(port , (req,res)=>{
 
 console.log(`your server had been set up at the port number ${port}`);
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
